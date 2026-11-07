@@ -1,0 +1,1821 @@
+<title>Diwali Wishes</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+
+<style>
+  /* Layout: multi-page immersive experience with improved navigation and mobile support */
+  :root {
+    --deep-night: #0a0118;
+    --warm-flame: #ff6b35;
+    --golden-light: #ffd166;
+    --rich-purple: #7b2cbf;
+    --soft-glow: #ffeaa7;
+    --text-light: #ffffff;
+
+    --display: "Playfair Display", serif;
+    --body: "Poppins", sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --deep-night: #0a0118;
+      --warm-flame: #ff6b35;
+      --golden-light: #ffd166;
+      --rich-purple: #7b2cbf;
+      --soft-glow: #ffeaa7;
+      --text-light: #ffffff;
+      color-scheme: dark;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --deep-night: #0a0118;
+    --warm-flame: #ff6b35;
+    --golden-light: #ffd166;
+    --rich-purple: #7b2cbf;
+    --soft-glow: #ffeaa7;
+    --text-light: #ffffff;
+    color-scheme: dark;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    height: 100%;
+    overflow: hidden;
+    touch-action: pan-x pan-y;
+  }
+
+  body {
+    background: var(--deep-night);
+    color: var(--text-light);
+    font-family: var(--body);
+    position: relative;
+  }
+
+  /* Pages */
+  .page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease, visibility 0.6s;
+  }
+
+  .page.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Desktop Navigation */
+  .nav-desktop {
+    position: fixed;
+    top: 50%;
+    right: max(20px, env(safe-area-inset-right, 0px));
+    transform: translateY(-50%);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 20px;
+    background: rgba(10, 1, 24, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 209, 102, 0.2);
+    transition: all 0.3s ease;
+    min-width: 50px;
+  }
+
+  .nav-item:hover {
+    background: rgba(10, 1, 24, 0.9);
+    border-color: rgba(255, 209, 102, 0.5);
+    transform: translateX(-5px);
+  }
+
+  .nav-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+  }
+
+  .nav-item.active .nav-dot {
+    background: var(--golden-light);
+    box-shadow: 0 0 12px var(--golden-light);
+    width: 12px;
+    height: 12px;
+  }
+
+  .nav-label {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    white-space: nowrap;
+    max-width: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .nav-item:hover .nav-label,
+  .nav-item.active .nav-label {
+    max-width: 150px;
+    margin-left: 4px;
+  }
+
+  .nav-item.active .nav-label {
+    color: var(--golden-light);
+    font-weight: 600;
+  }
+
+  /* Mobile Navigation */
+  .nav-mobile {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(10, 1, 24, 0.98);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 209, 102, 0.3);
+    padding: 8px max(8px, env(safe-area-inset-left, 0px)) max(8px, env(safe-area-inset-bottom, 0px)) max(8px, env(safe-area-inset-right, 0px));
+    z-index: 100;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .nav-mobile-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .nav-mobile-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 4px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    background: rgba(255, 255, 255, 0.02);
+    min-width: 0;
+  }
+
+  .nav-mobile-item:active {
+    transform: scale(0.92);
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .nav-mobile-icon {
+    font-size: 1.4rem;
+    transition: all 0.2s ease;
+  }
+
+  .nav-mobile-label {
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    line-height: 1.1;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+  }
+
+  .nav-mobile-item.active {
+    background: rgba(255, 209, 102, 0.15);
+    border: 1px solid rgba(255, 209, 102, 0.3);
+  }
+
+  .nav-mobile-item.active .nav-mobile-label {
+    color: var(--golden-light);
+    font-weight: 600;
+  }
+
+  .nav-mobile-item.active .nav-mobile-icon {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px var(--golden-light));
+  }
+
+  /* Page 1: 3D Diyas */
+  #canvas3d {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    touch-action: none;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    pointer-events: none;
+    padding-inline: max(24px, env(safe-area-inset-left, 0px)) max(24px, env(safe-area-inset-right, 0px));
+  }
+
+  .greeting {
+    opacity: 0;
+    animation: fadeInUp 2s ease-out 0.5s forwards;
+  }
+
+  h1 {
+    font-family: var(--display);
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--golden-light), var(--warm-flame), var(--rich-purple));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.02em;
+  }
+
+  .message {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    max-width: 600px;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+  }
+
+  .from {
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+    font-style: italic;
+    color: var(--golden-light);
+    margin-top: 1rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  }
+
+  .instructions {
+    position: fixed;
+    bottom: max(90px, env(safe-area-inset-bottom, 0px) + 70px);
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    z-index: 3;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+    pointer-events: none;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Page 2: Story */
+  .story-page {
+    overflow-y: auto;
+    padding: 80px 0 120px;
+  }
+
+  .story-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-inline: max(24px, env(safe-area-inset-left, 0px)) max(24px, env(safe-area-inset-right, 0px));
+    padding-block: 40px;
+  }
+
+  .story-page h2 {
+    font-family: var(--display);
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    margin-bottom: 2rem;
+    background: linear-gradient(135deg, var(--golden-light), var(--warm-flame));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+  }
+
+  .story-page h3 {
+    font-family: var(--display);
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--golden-light);
+  }
+
+  .story-page p {
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  /* Page 3: Traditions */
+  .traditions-page {
+    overflow-y: auto;
+    padding: 80px 0 120px;
+  }
+
+  .traditions-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-inline: max(24px, env(safe-area-inset-left, 0px));
+  }
+
+  .traditions-header h2 {
+    font-family: var(--display);
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--golden-light), var(--warm-flame));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .traditions-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-inline: max(24px, env(safe-area-inset-left, 0px)) max(24px, env(safe-area-inset-right, 0px));
+    padding-block: 20px 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .tradition-card {
+    background: linear-gradient(135deg, rgba(123, 44, 191, 0.15), rgba(255, 107, 53, 0.1));
+    border: 1px solid rgba(255, 209, 102, 0.2);
+    border-radius: 20px;
+    padding: 32px;
+    transition: all 0.3s ease;
+  }
+
+  .tradition-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 209, 102, 0.6);
+    box-shadow: 0 15px 40px rgba(255, 107, 53, 0.3);
+  }
+
+  .tradition-icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .tradition-card h3 {
+    font-family: var(--display);
+    font-size: 1.5rem;
+    color: var(--golden-light);
+    margin-bottom: 12px;
+  }
+
+  .tradition-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  /* Page 4: Rangoli */
+  .rangoli-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #rangoli-canvas {
+    cursor: crosshair;
+    touch-action: none;
+  }
+
+  .rangoli-controls {
+    position: fixed;
+    bottom: max(90px, env(safe-area-inset-bottom, 0px) + 70px);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    background: rgba(10, 1, 24, 0.95);
+    padding: 16px 24px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 209, 102, 0.4);
+    z-index: 10;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .color-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .color-btn:hover,
+  .color-btn.active {
+    transform: scale(1.2);
+    border-color: white;
+    box-shadow: 0 0 20px currentColor;
+  }
+
+  .rangoli-title {
+    position: fixed;
+    top: max(60px, env(safe-area-inset-top, 0px) + 40px);
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--display);
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    background: linear-gradient(135deg, var(--golden-light), var(--warm-flame));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  .rangoli-subtitle {
+    position: fixed;
+    top: max(110px, env(safe-area-inset-top, 0px) + 90px);
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.6);
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  /* Page 5: Recipes */
+  .recipes-page {
+    overflow-y: auto;
+    padding: 80px 0 120px;
+  }
+
+  .recipes-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-inline: max(24px, env(safe-area-inset-left, 0px));
+  }
+
+  .recipes-header h2 {
+    font-family: var(--display);
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--golden-light), var(--warm-flame));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .recipes-intro {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+
+  .recipes-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-inline: max(24px, env(safe-area-inset-left, 0px)) max(24px, env(safe-area-inset-right, 0px));
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+  }
+
+  .recipe-card {
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(123, 44, 191, 0.1));
+    border: 1px solid rgba(255, 209, 102, 0.25);
+    border-radius: 20px;
+    padding: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .recipe-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 209, 102, 0.6);
+    box-shadow: 0 15px 40px rgba(255, 107, 53, 0.3);
+  }
+
+  .recipe-card.special {
+    background: linear-gradient(135deg, rgba(255, 209, 102, 0.2), rgba(255, 107, 53, 0.15));
+    border: 2px solid rgba(255, 209, 102, 0.5);
+    position: relative;
+  }
+
+  .recipe-card.special::before {
+    content: "⭐";
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 2rem;
+    animation: sparkle 2s ease-in-out infinite;
+  }
+
+  @keyframes sparkle {
+    0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); }
+    50% { opacity: 0.7; transform: scale(1.2) rotate(180deg); }
+  }
+
+  .recipe-header {
+    padding: 28px;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.15), rgba(123, 44, 191, 0.15));
+  }
+
+  .recipe-card.special .recipe-header {
+    background: linear-gradient(135deg, rgba(255, 209, 102, 0.25), rgba(255, 107, 53, 0.2));
+  }
+
+  .recipe-card h3 {
+    font-family: var(--display);
+    font-size: 1.6rem;
+    color: var(--golden-light);
+    margin-bottom: 8px;
+  }
+
+  .recipe-time {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .recipe-body {
+    padding: 24px 28px;
+  }
+
+  .recipe-body p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 16px;
+  }
+
+  .recipe-body ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .recipe-body li {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.75);
+    padding-left: 20px;
+    position: relative;
+  }
+
+  .recipe-body li::before {
+    content: "✦";
+    position: absolute;
+    left: 0;
+    color: var(--golden-light);
+  }
+
+  /* Page 6: Wishes Card */
+  .wishes-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: max(24px, env(safe-area-inset-left, 0px)) max(24px, env(safe-area-inset-right, 0px)) max(100px, env(safe-area-inset-bottom, 0px) + 80px);
+  }
+
+  .wishes-card {
+    max-width: 600px;
+    background: linear-gradient(135deg, rgba(123, 44, 191, 0.2), rgba(255, 107, 53, 0.15));
+    border: 2px solid rgba(255, 209, 102, 0.3);
+    border-radius: 30px;
+    padding: 48px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  }
+
+  .wishes-card h2 {
+    font-family: var(--display);
+    font-size: clamp(2rem, 6vw, 3rem);
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--golden-light), var(--warm-flame));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .wishes-card p {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+  }
+
+  .wishes-signature {
+    font-family: var(--display);
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+    color: var(--golden-light);
+    margin-top: 2rem;
+    font-style: italic;
+  }
+
+  .decorative-lights {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 2rem;
+    font-size: 2rem;
+    animation: twinkle 2s ease-in-out infinite;
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+
+  /* Page 7: Fireworks */
+  .fireworks-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #fireworks-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .fireworks-message {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: max(24px, env(safe-area-inset-left, 0px)) max(24px, env(safe-area-inset-right, 0px));
+  }
+
+  .fireworks-message h2 {
+    font-family: var(--display);
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--golden-light), var(--warm-flame), var(--soft-glow));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  .fireworks-message p {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .nav-desktop {
+      display: none;
+    }
+
+    .nav-mobile {
+      display: block;
+    }
+
+    .instructions {
+      font-size: 0.7rem;
+    }
+
+    .traditions-grid,
+    .recipes-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .wishes-card {
+      padding: 32px 24px;
+    }
+
+    .rangoli-controls {
+      gap: 8px;
+      padding: 12px 16px;
+    }
+
+    .color-btn {
+      width: 35px;
+      height: 35px;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 10vw, 3.5rem);
+    }
+
+    .message {
+      font-size: clamp(1rem, 4vw, 1.2rem);
+      padding-inline: 16px;
+    }
+  }
+</style>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap">
+
+<!-- Desktop Navigation -->
+<nav class="nav-desktop">
+  <div class="nav-item active" data-page="0">
+    <div class="nav-dot"></div>
+    <span class="nav-label">Greeting</span>
+  </div>
+  <div class="nav-item" data-page="1">
+    <div class="nav-dot"></div>
+    <span class="nav-label">Story</span>
+  </div>
+  <div class="nav-item" data-page="2">
+    <div class="nav-dot"></div>
+    <span class="nav-label">Traditions</span>
+  </div>
+  <div class="nav-item" data-page="3">
+    <div class="nav-dot"></div>
+    <span class="nav-label">Rangoli</span>
+  </div>
+  <div class="nav-item" data-page="4">
+    <div class="nav-dot"></div>
+    <span class="nav-label">Recipes</span>
+  </div>
+  <div class="nav-item" data-page="5">
+    <div class="nav-dot"></div>
+    <span class="nav-label">Wishes</span>
+  </div>
+  <div class="nav-item" data-page="6">
+    <div class="nav-dot"></div>
+    <span class="nav-label">Fireworks</span>
+  </div>
+</nav>
+
+<!-- Mobile Navigation -->
+<nav class="nav-mobile">
+  <div class="nav-mobile-grid">
+    <div class="nav-mobile-item active" data-page="0">
+      <div class="nav-mobile-icon">🪔</div>
+      <div class="nav-mobile-label">Greet</div>
+    </div>
+    <div class="nav-mobile-item" data-page="1">
+      <div class="nav-mobile-icon">📖</div>
+      <div class="nav-mobile-label">Story</div>
+    </div>
+    <div class="nav-mobile-item" data-page="2">
+      <div class="nav-mobile-icon">🎆</div>
+      <div class="nav-mobile-label">Ritual</div>
+    </div>
+    <div class="nav-mobile-item" data-page="3">
+      <div class="nav-mobile-icon">🎨</div>
+      <div class="nav-mobile-label">Draw</div>
+    </div>
+    <div class="nav-mobile-item" data-page="4">
+      <div class="nav-mobile-icon">🍬</div>
+      <div class="nav-mobile-label">Sweets</div>
+    </div>
+    <div class="nav-mobile-item" data-page="5">
+      <div class="nav-mobile-icon">💝</div>
+      <div class="nav-mobile-label">Wish</div>
+    </div>
+    <div class="nav-mobile-item" data-page="6">
+      <div class="nav-mobile-icon">🎇</div>
+      <div class="nav-mobile-label">Fire</div>
+    </div>
+  </div>
+</nav>
+
+<!-- Page 1: 3D Diyas -->
+<div class="page active" data-page="0">
+  <canvas id="canvas3d"></canvas>
+  <div class="content">
+    <div class="greeting">
+      <h1>Happy Diwali</h1>
+      <p class="message">
+        May this festival of lights bring joy, prosperity, and endless happiness to you and your loved ones.
+        May the glow of diyas illuminate your path to success and fill your home with warmth.
+      </p>
+      <p class="from">— With warm wishes from Kapil Kumar</p>
+    </div>
+  </div>
+  <div class="instructions">Touch & drag to rotate</div>
+</div>
+
+<!-- Page 2: Story -->
+<div class="page story-page" data-page="1">
+  <div class="story-content">
+    <h2>The Story of Diwali</h2>
+
+    <p>Diwali, the Festival of Lights, is one of the most cherished celebrations in Indian culture, marking the victory of light over darkness and good over evil.</p>
+
+    <h3>The Return of Lord Rama</h3>
+    <p>The most popular legend tells of Lord Rama's return to Ayodhya after 14 years of exile and his victory over the demon king Ravana. The people of Ayodhya lit oil lamps to illuminate his path home, celebrating the triumph of righteousness.</p>
+
+    <h3>Goddess Lakshmi</h3>
+    <p>Diwali is also celebrated as the day when Goddess Lakshmi, the deity of wealth and prosperity, emerged from the cosmic ocean. Homes are cleaned and decorated with lights to welcome her blessings.</p>
+
+    <h3>Five Days of Celebration</h3>
+    <p>The festival spans five days, each with its own significance. From Dhanteras celebrating wealth, to Naraka Chaturdashi commemorating Krishna's victory, to the main Diwali day, followed by Govardhan Puja and Bhai Dooj celebrating sibling bonds.</p>
+
+    <h3>A Universal Message</h3>
+    <p>Beyond its religious roots, Diwali embodies a universal message: the inner light that protects us from spiritual darkness. It's a time for renewal, forgiveness, and strengthening of relationships.</p>
+  </div>
+</div>
+
+<!-- Page 3: Traditions -->
+<div class="page traditions-page" data-page="2">
+  <div class="traditions-header">
+    <h2>Diwali Traditions</h2>
+  </div>
+
+  <div class="traditions-grid">
+    <div class="tradition-card">
+      <span class="tradition-icon">🪔</span>
+      <h3>Lighting Diyas</h3>
+      <p>Clay lamps filled with oil are lit and placed around homes, symbolizing the triumph of light over darkness and knowledge over ignorance.</p>
+    </div>
+
+    <div class="tradition-card">
+      <span class="tradition-icon">🎨</span>
+      <h3>Rangoli</h3>
+      <p>Colorful patterns made from colored powders, rice, or flower petals decorate entrances, welcoming guests and the goddess Lakshmi into homes.</p>
+    </div>
+
+    <div class="tradition-card">
+      <span class="tradition-icon">🎆</span>
+      <h3>Fireworks</h3>
+      <p>The night sky lights up with fireworks and sparklers, adding to the festive atmosphere and symbolizing the joy of the people.</p>
+    </div>
+
+    <div class="tradition-card">
+      <span class="tradition-icon">🍬</span>
+      <h3>Sweets & Feasts</h3>
+      <p>Families prepare traditional sweets like ladoos, barfi, and gulab jamun, sharing them with neighbors and loved ones as a gesture of goodwill.</p>
+    </div>
+
+    <div class="tradition-card">
+      <span class="tradition-icon">🙏</span>
+      <h3>Lakshmi Puja</h3>
+      <p>Special prayers are offered to Goddess Lakshmi and Lord Ganesha, seeking blessings for prosperity, happiness, and success in the coming year.</p>
+    </div>
+
+    <div class="tradition-card">
+      <span class="tradition-icon">🎁</span>
+      <h3>Gift Giving</h3>
+      <p>Exchanging gifts with family, friends, and colleagues strengthens bonds and spreads joy during this auspicious festival.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Page 4: Rangoli -->
+<div class="page rangoli-page" data-page="3">
+  <h2 class="rangoli-title">Create Your Rangoli</h2>
+  <p class="rangoli-subtitle">Draw with your mouse or finger</p>
+  <canvas id="rangoli-canvas"></canvas>
+  <div class="rangoli-controls">
+    <button class="color-btn active" data-color="#ff6b35" style="background: #ff6b35;"></button>
+    <button class="color-btn" data-color="#ffd166" style="background: #ffd166;"></button>
+    <button class="color-btn" data-color="#7b2cbf" style="background: #7b2cbf;"></button>
+    <button class="color-btn" data-color="#06ffa5" style="background: #06ffa5;"></button>
+    <button class="color-btn" data-color="#ff006e" style="background: #ff006e;"></button>
+    <button class="color-btn" data-color="#ffeaa7" style="background: #ffeaa7;"></button>
+  </div>
+</div>
+
+<!-- Page 5: Recipes -->
+<div class="page recipes-page" data-page="4">
+  <div class="recipes-header">
+    <h2>Diwali Delicacies</h2>
+    <p class="recipes-intro">And of course, our special one and only Soan Papdi</p>
+  </div>
+
+  <div class="recipes-grid">
+    <div class="recipe-card special">
+      <div class="recipe-header">
+        <h3>Soan Papdi</h3>
+        <div class="recipe-time">⏱️ 60 minutes • The Legendary One</div>
+      </div>
+      <div class="recipe-body">
+        <p>The crown jewel of Diwali sweets! This flaky, crispy, melt-in-your-mouth delicacy is what makes Diwali truly special. Every bite dissolves into pure joy.</p>
+        <ul>
+          <li>Gram flour & ghee perfection</li>
+          <li>Thousands of delicate layers</li>
+          <li>Cardamom & saffron essence</li>
+          <li>Topped with pistachios & almonds</li>
+          <li>The gift everyone hopes for!</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="recipe-card">
+      <div class="recipe-header">
+        <h3>Gulab Jamun</h3>
+        <div class="recipe-time">⏱️ 45 minutes</div>
+      </div>
+      <div class="recipe-body">
+        <p>Soft, syrupy milk-solid dumplings that melt in your mouth, a quintessential Diwali sweet.</p>
+        <ul>
+          <li>Milk powder & flour dough</li>
+          <li>Deep fried until golden</li>
+          <li>Soaked in cardamom syrup</li>
+          <li>Served warm or cold</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="recipe-card">
+      <div class="recipe-header">
+        <h3>Kaju Katli</h3>
+        <div class="recipe-time">⏱️ 30 minutes</div>
+      </div>
+      <div class="recipe-body">
+        <p>Diamond-shaped cashew fudge with a delicate sweetness and smooth texture.</p>
+        <ul>
+          <li>Ground cashew nuts</li>
+          <li>Sugar syrup base</li>
+          <li>Rolled thin & cut into diamonds</li>
+          <li>Garnished with silver leaf</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="recipe-card">
+      <div class="recipe-header">
+        <h3>Ladoo</h3>
+        <div class="recipe-time">⏱️ 40 minutes</div>
+      </div>
+      <div class="recipe-body">
+        <p>Round sweetballs made from various ingredients, symbolizing prosperity and good fortune.</p>
+        <ul>
+          <li>Besan or semolina base</li>
+          <li>Ghee & sugar binding</li>
+          <li>Nuts & cardamom flavoring</li>
+          <li>Rolled into perfect spheres</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="recipe-card">
+      <div class="recipe-header">
+        <h3>Jalebi</h3>
+        <div class="recipe-time">⏱️ 50 minutes</div>
+      </div>
+      <div class="recipe-body">
+        <p>Crispy, spiral-shaped sweet with a bright orange color and sugar syrup coating.</p>
+        <ul>
+          <li>Fermented batter</li>
+          <li>Deep fried in spirals</li>
+          <li>Dipped in saffron syrup</li>
+          <li>Crispy outside, juicy inside</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="recipe-card">
+      <div class="recipe-header">
+        <h3>Barfi</h3>
+        <div class="recipe-time">⏱️ 35 minutes</div>
+      </div>
+      <div class="recipe-body">
+        <p>Dense milk-based fudge in various flavors, cut into square or diamond shapes.</p>
+        <ul>
+          <li>Condensed milk base</li>
+          <li>Flavored with nuts or fruits</li>
+          <li>Set and cut into pieces</li>
+          <li>Garnished with pistachios</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Page 6: Wishes Card -->
+<div class="page wishes-page" data-page="5">
+  <div class="wishes-card">
+    <h2>Shubh Deepavali</h2>
+    <p>
+      May the divine light of Diwali spread peace, prosperity, happiness, and good health in your life.
+      May the lamps of joy illuminate your days and nights throughout the year.
+    </p>
+    <p>
+      Wishing you and your family a festival filled with supreme joy, happiness, and love.
+      May all your dreams come true and may success always be yours.
+    </p>
+    <div class="decorative-lights">
+      <span>✨</span>
+      <span>🪔</span>
+      <span>✨</span>
+      <span>🪔</span>
+      <span>✨</span>
+    </div>
+    <div class="wishes-signature">Kapil Kumar</div>
+  </div>
+</div>
+
+<!-- Page 7: Fireworks -->
+<div class="page fireworks-page" data-page="6">
+  <canvas id="fireworks-canvas"></canvas>
+  <div class="fireworks-message">
+    <h2>Celebrate!</h2>
+    <p>May your life sparkle with moments of love, laughter, and goodwill. Happy Diwali!</p>
+  </div>
+</div>
+
+<script>
+// Navigation System
+let currentPage = 0;
+const pages = document.querySelectorAll('.page');
+const navItemsDesktop = document.querySelectorAll('.nav-item');
+const navItemsMobile = document.querySelectorAll('.nav-mobile-item');
+
+function switchPage(pageIndex) {
+  if (pageIndex === currentPage) return;
+
+  pages[currentPage].classList.remove('active');
+  navItemsDesktop[currentPage].classList.remove('active');
+  navItemsMobile[currentPage].classList.remove('active');
+
+  currentPage = pageIndex;
+
+  pages[currentPage].classList.add('active');
+  navItemsDesktop[currentPage].classList.add('active');
+  navItemsMobile[currentPage].classList.add('active');
+
+  if (currentPage === 0) {
+    requestAnimationFrame(animate);
+  }
+
+  if (currentPage === 3 && !rangoli.initialized) {
+    initRangoli();
+  }
+
+  if (currentPage === 6 && !fireworks.initialized) {
+    initFireworks();
+  }
+}
+
+navItemsDesktop.forEach((item, index) => {
+  item.addEventListener('click', () => switchPage(index));
+});
+
+navItemsMobile.forEach((item, index) => {
+  item.addEventListener('click', () => switchPage(index));
+});
+
+// Page 1: 3D Diyas (Improved Mobile Support)
+const canvas = document.getElementById('canvas3d');
+const ctx = canvas.getContext('2d');
+
+let width, height, centerX, centerY;
+let rotation = { x: 0.3, y: 0 };
+let targetRotation = { x: 0.3, y: 0 };
+let zoom = 1;
+let targetZoom = 1;
+let isDragging = false;
+let lastMouse = { x: 0, y: 0 };
+let autoRotate = true;
+
+function resize() {
+  width = canvas.width = window.innerWidth;
+  height = canvas.height = window.innerHeight;
+  centerX = width / 2;
+  centerY = height / 2;
+}
+
+class Diya {
+  constructor(x, y, z, size) {
+    this.basePos = { x, y, z };
+    this.size = size;
+    this.flameHeight = 1 + Math.random() * 0.3;
+    this.flamePhase = Math.random() * Math.PI * 2;
+    this.sparklePhase = Math.random() * Math.PI * 2;
+  }
+
+  project(point, rot, z) {
+    let x = point.x * Math.cos(rot.y) - point.z * Math.sin(rot.y);
+    let pz = point.x * Math.sin(rot.y) + point.z * Math.cos(rot.y);
+    let y = point.y * Math.cos(rot.x) - pz * Math.sin(rot.x);
+    pz = point.y * Math.sin(rot.x) + pz * Math.cos(rot.x);
+    let scale = 400 / (400 + pz);
+    return { x: centerX + x * scale * z, y: centerY + y * scale * z, scale: scale };
+  }
+
+  draw(time, rot, z) {
+    let pos = this.project(this.basePos, rot, z);
+    if (pos.scale < 0.1) return;
+    let size = this.size * pos.scale;
+
+    ctx.save();
+
+    let glowGrad = ctx.createRadialGradient(pos.x, pos.y, 0, pos.x, pos.y, size * 3);
+    glowGrad.addColorStop(0, 'rgba(255, 107, 53, 0.3)');
+    glowGrad.addColorStop(0.5, 'rgba(255, 209, 102, 0.15)');
+    glowGrad.addColorStop(1, 'rgba(255, 209, 102, 0)');
+    ctx.fillStyle = glowGrad;
+    ctx.fillRect(pos.x - size * 3, pos.y - size * 3, size * 6, size * 6);
+
+    ctx.beginPath();
+    ctx.ellipse(pos.x, pos.y + size * 0.3, size * 0.9, size * 0.4, 0, 0, Math.PI * 2);
+    let bowlGrad = ctx.createLinearGradient(pos.x - size, pos.y, pos.x + size, pos.y + size);
+    bowlGrad.addColorStop(0, '#d4af37');
+    bowlGrad.addColorStop(0.5, '#ffd700');
+    bowlGrad.addColorStop(1, '#b8860b');
+    ctx.fillStyle = bowlGrad;
+    ctx.fill();
+
+    let flicker = Math.sin(time * 3 + this.flamePhase) * 0.1 + 1;
+    let flameHeight = size * this.flameHeight * flicker;
+
+    ctx.beginPath();
+    ctx.moveTo(pos.x, pos.y);
+    ctx.bezierCurveTo(pos.x - size * 0.3, pos.y - flameHeight * 0.5, pos.x - size * 0.2, pos.y - flameHeight, pos.x, pos.y - flameHeight * 1.1);
+    ctx.bezierCurveTo(pos.x + size * 0.2, pos.y - flameHeight, pos.x + size * 0.3, pos.y - flameHeight * 0.5, pos.x, pos.y);
+
+    let flameGrad = ctx.createLinearGradient(pos.x, pos.y, pos.x, pos.y - flameHeight);
+    flameGrad.addColorStop(0, '#ff6b35');
+    flameGrad.addColorStop(0.4, '#ffd166');
+    flameGrad.addColorStop(0.7, '#ffeaa7');
+    flameGrad.addColorStop(1, 'rgba(255, 234, 167, 0.3)');
+    ctx.fillStyle = flameGrad;
+    ctx.fill();
+
+    let glowSize = size * 2 * flicker;
+    let innerGlow = ctx.createRadialGradient(pos.x, pos.y - flameHeight * 0.5, 0, pos.x, pos.y - flameHeight * 0.5, glowSize);
+    innerGlow.addColorStop(0, 'rgba(255, 234, 167, 0.6)');
+    innerGlow.addColorStop(0.5, 'rgba(255, 209, 102, 0.3)');
+    innerGlow.addColorStop(1, 'rgba(255, 107, 53, 0)');
+    ctx.fillStyle = innerGlow;
+    ctx.fillRect(pos.x - glowSize, pos.y - flameHeight - glowSize, glowSize * 2, glowSize * 2);
+
+    ctx.restore();
+
+    let sparkle = Math.sin(time * 4 + this.sparklePhase) * 0.5 + 0.5;
+    if (sparkle > 0.7) {
+      ctx.save();
+      ctx.fillStyle = 'rgba(255, 234, 167, ' + (sparkle * 0.8) + ')';
+      ctx.shadowBlur = 10;
+      ctx.shadowColor = '#ffeaa7';
+      for (let i = 0; i < 3; i++) {
+        let angle = (time * 2 + i * Math.PI * 2 / 3) % (Math.PI * 2);
+        let dist = size * 1.5;
+        ctx.beginPath();
+        ctx.arc(pos.x + Math.cos(angle) * dist, pos.y - flameHeight * 0.5 + Math.sin(angle) * dist * 0.5, size * 0.15, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.restore();
+    }
+  }
+}
+
+const diyas = [];
+const radius = 200;
+const count = 12;
+
+for (let i = 0; i < count; i++) {
+  let angle = (i / count) * Math.PI * 2;
+  diyas.push(new Diya(Math.cos(angle) * radius, Math.sin(i * 0.5) * 30, Math.sin(angle) * radius, 30 + Math.random() * 20));
+}
+
+class Particle {
+  constructor() {
+    this.reset();
+  }
+
+  reset() {
+    let angle = Math.random() * Math.PI * 2;
+    let distance = Math.random() * 300;
+    this.x = Math.cos(angle) * distance;
+    this.y = -400 + Math.random() * 200;
+    this.z = Math.sin(angle) * distance;
+    this.vy = 0.5 + Math.random() * 1;
+    this.size = 1 + Math.random() * 2;
+    this.opacity = 0.3 + Math.random() * 0.7;
+    this.hue = 30 + Math.random() * 60;
+  }
+
+  update() {
+    this.y += this.vy;
+    if (this.y > 400) this.reset();
+  }
+
+  draw(rot, z) {
+    let pos = diyas[0].project({ x: this.x, y: this.y, z: this.z }, rot, z);
+    if (pos.scale < 0.1) return;
+
+    ctx.save();
+    ctx.fillStyle = `hsla(${this.hue}, 100%, 60%, ${this.opacity * pos.scale})`;
+    ctx.shadowBlur = 3;
+    ctx.shadowColor = `hsl(${this.hue}, 100%, 60%)`;
+    ctx.beginPath();
+    ctx.arc(pos.x, pos.y, this.size * pos.scale, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+}
+
+const particles = [];
+for (let i = 0; i < 100; i++) {
+  particles.push(new Particle());
+}
+
+function animate(timestamp) {
+  if (currentPage !== 0) return;
+
+  let time = timestamp * 0.001;
+  ctx.fillStyle = 'rgba(10, 1, 24, 0.3)';
+  ctx.fillRect(0, 0, width, height);
+
+  rotation.x += (targetRotation.x - rotation.x) * 0.1;
+  rotation.y += (targetRotation.y - rotation.y) * 0.1;
+  zoom += (targetZoom - zoom) * 0.1;
+
+  if (autoRotate && !isDragging) {
+    targetRotation.y = time * 0.15;
+  }
+
+  particles.forEach(p => {
+    p.update();
+    p.draw(rotation, zoom);
+  });
+
+  [...diyas].sort((a, b) => {
+    let az = a.basePos.x * Math.sin(rotation.y) + a.basePos.z * Math.cos(rotation.y);
+    let bz = b.basePos.x * Math.sin(rotation.y) + b.basePos.z * Math.cos(rotation.y);
+    return az - bz;
+  }).forEach(diya => diya.draw(time, rotation, zoom));
+
+  requestAnimationFrame(animate);
+}
+
+// Mouse events
+canvas.addEventListener('mousedown', e => {
+  isDragging = true;
+  autoRotate = false;
+  lastMouse = { x: e.clientX, y: e.clientY };
+});
+
+canvas.addEventListener('mousemove', e => {
+  if (isDragging) {
+    let dx = e.clientX - lastMouse.x;
+    let dy = e.clientY - lastMouse.y;
+    targetRotation.y += dx * 0.01;
+    targetRotation.x -= dy * 0.01;
+    targetRotation.x = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, targetRotation.x));
+    lastMouse = { x: e.clientX, y: e.clientY };
+  }
+});
+
+canvas.addEventListener('mouseup', () => {
+  isDragging = false;
+  setTimeout(() => { autoRotate = true; }, 2000);
+});
+
+canvas.addEventListener('wheel', e => {
+  e.preventDefault();
+  targetZoom *= e.deltaY > 0 ? 0.9 : 1.1;
+  targetZoom = Math.max(0.5, Math.min(2, targetZoom));
+}, { passive: false });
+
+// Touch events - improved for mobile
+let lastTouch = null;
+let lastTouchTime = 0;
+
+canvas.addEventListener('touchstart', e => {
+  if (e.touches.length === 1) {
+    e.preventDefault();
+    isDragging = true;
+    autoRotate = false;
+    lastTouch = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    lastTouchTime = Date.now();
+  }
+}, { passive: false });
+
+canvas.addEventListener('touchmove', e => {
+  if (isDragging && e.touches.length === 1) {
+    e.preventDefault();
+    let dx = e.touches[0].clientX - lastTouch.x;
+    let dy = e.touches[0].clientY - lastTouch.y;
+    targetRotation.y += dx * 0.015;
+    targetRotation.x -= dy * 0.015;
+    targetRotation.x = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, targetRotation.x));
+    lastTouch = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+  }
+}, { passive: false });
+
+canvas.addEventListener('touchend', e => {
+  e.preventDefault();
+  isDragging = false;
+  lastTouch = null;
+  setTimeout(() => { autoRotate = true; }, 3000);
+}, { passive: false });
+
+// Pinch zoom for mobile
+let initialPinchDistance = null;
+
+canvas.addEventListener('touchstart', e => {
+  if (e.touches.length === 2) {
+    e.preventDefault();
+    const dx = e.touches[0].clientX - e.touches[1].clientX;
+    const dy = e.touches[0].clientY - e.touches[1].clientY;
+    initialPinchDistance = Math.sqrt(dx * dx + dy * dy);
+  }
+}, { passive: false });
+
+canvas.addEventListener('touchmove', e => {
+  if (e.touches.length === 2 && initialPinchDistance) {
+    e.preventDefault();
+    const dx = e.touches[0].clientX - e.touches[1].clientX;
+    const dy = e.touches[0].clientY - e.touches[1].clientY;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+    const scale = distance / initialPinchDistance;
+    targetZoom *= scale;
+    targetZoom = Math.max(0.5, Math.min(2, targetZoom));
+    initialPinchDistance = distance;
+  }
+}, { passive: false });
+
+canvas.addEventListener('touchend', e => {
+  if (e.touches.length < 2) {
+    initialPinchDistance = null;
+  }
+}, { passive: false });
+
+window.addEventListener('resize', resize);
+resize();
+requestAnimationFrame(animate);
+
+// Page 4: Rangoli
+const rangoli = {
+  canvas: document.getElementById('rangoli-canvas'),
+  ctx: null,
+  drawing: false,
+  currentColor: '#ff6b35',
+  symmetry: 8,
+  initialized: false
+};
+
+function initRangoli() {
+  if (rangoli.initialized) return;
+
+  rangoli.ctx = rangoli.canvas.getContext('2d');
+  rangoli.canvas.width = window.innerWidth;
+  rangoli.canvas.height = window.innerHeight;
+  rangoli.ctx.fillStyle = '#0a0118';
+  rangoli.ctx.fillRect(0, 0, rangoli.canvas.width, rangoli.canvas.height);
+
+  const cx = rangoli.canvas.width / 2;
+  const cy = rangoli.canvas.height / 2;
+  const radius = Math.min(cx, cy) * 0.7;
+
+  rangoli.ctx.save();
+  rangoli.ctx.strokeStyle = 'rgba(255, 209, 102, 0.1)';
+  rangoli.ctx.lineWidth = 1;
+
+  for (let i = 0; i < rangoli.symmetry; i++) {
+    const angle = (Math.PI * 2 * i) / rangoli.symmetry;
+    rangoli.ctx.beginPath();
+    rangoli.ctx.moveTo(cx, cy);
+    rangoli.ctx.lineTo(cx + Math.cos(angle) * radius, cy + Math.sin(angle) * radius);
+    rangoli.ctx.stroke();
+  }
+
+  for (let r = radius / 4; r <= radius; r += radius / 4) {
+    rangoli.ctx.beginPath();
+    rangoli.ctx.arc(cx, cy, r, 0, Math.PI * 2);
+    rangoli.ctx.stroke();
+  }
+
+  rangoli.ctx.restore();
+  rangoli.initialized = true;
+}
+
+function drawSymmetric(x, y) {
+  const cx = rangoli.canvas.width / 2;
+  const cy = rangoli.canvas.height / 2;
+  const dx = x - cx;
+  const dy = y - cy;
+  const angle = Math.atan2(dy, dx);
+  const distance = Math.sqrt(dx * dx + dy * dy);
+
+  rangoli.ctx.fillStyle = rangoli.currentColor;
+  rangoli.ctx.shadowBlur = 15;
+  rangoli.ctx.shadowColor = rangoli.currentColor;
+
+  for (let i = 0; i < rangoli.symmetry; i++) {
+    const a = angle + (Math.PI * 2 * i) / rangoli.symmetry;
+    rangoli.ctx.beginPath();
+    rangoli.ctx.arc(cx + Math.cos(a) * distance, cy + Math.sin(a) * distance, 8, 0, Math.PI * 2);
+    rangoli.ctx.fill();
+  }
+
+  rangoli.ctx.shadowBlur = 0;
+}
+
+rangoli.canvas.addEventListener('mousedown', () => {
+  if (currentPage === 3) rangoli.drawing = true;
+});
+
+rangoli.canvas.addEventListener('mousemove', (e) => {
+  if (currentPage === 3 && rangoli.drawing) {
+    const rect = rangoli.canvas.getBoundingClientRect();
+    drawSymmetric(e.clientX - rect.left, e.clientY - rect.top);
+  }
+});
+
+rangoli.canvas.addEventListener('mouseup', () => rangoli.drawing = false);
+
+rangoli.canvas.addEventListener('touchstart', (e) => {
+  if (currentPage === 3) {
+    e.preventDefault();
+    rangoli.drawing = true;
+  }
+}, { passive: false });
+
+rangoli.canvas.addEventListener('touchmove', (e) => {
+  if (currentPage === 3 && rangoli.drawing) {
+    e.preventDefault();
+    const rect = rangoli.canvas.getBoundingClientRect();
+    const touch = e.touches[0];
+    drawSymmetric(touch.clientX - rect.left, touch.clientY - rect.top);
+  }
+}, { passive: false });
+
+rangoli.canvas.addEventListener('touchend', (e) => {
+  e.preventDefault();
+  rangoli.drawing = false;
+}, { passive: false });
+
+document.querySelectorAll('.color-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelector('.color-btn.active').classList.remove('active');
+    btn.classList.add('active');
+    rangoli.currentColor = btn.dataset.color;
+  });
+});
+
+
+// Page 7: Interactive Fireworks
+const fireworks = {
+  canvas: document.getElementById('fireworks-canvas'),
+  ctx: null,
+  particles: [],
+  rockets: [],
+  sparklers: [],
+  initialized: false,
+  dragStart: null,
+  isDragging: false
+};
+
+function initFireworks() {
+  if (fireworks.initialized) return;
+  
+  fireworks.ctx = fireworks.canvas.getContext('2d');
+  fireworks.canvas.width = window.innerWidth;
+  fireworks.canvas.height = window.innerHeight;
+  fireworks.initialized = true;
+  
+  setupFireworksInteraction();
+  animateFireworks();
+}
+
+class FireworkParticle {
+  constructor(x, y, color, type = 'normal') {
+    this.x = x;
+    this.y = y;
+    this.type = type;
+    
+    if (type === 'bomb') {
+      const angle = Math.random() * Math.PI * 2;
+      const speed = Math.random() * 8 + 5;
+      this.vx = Math.cos(angle) * speed;
+      this.vy = Math.sin(angle) * speed;
+      this.life = 1;
+      this.decay = Math.random() * 0.01 + 0.008;
+    } else if (type === 'fountain') {
+      const angle = -Math.PI / 2 + (Math.random() - 0.5) * Math.PI / 3;
+      const speed = Math.random() * 6 + 3;
+      this.vx = Math.cos(angle) * speed;
+      this.vy = Math.sin(angle) * speed;
+      this.life = 1;
+      this.decay = Math.random() * 0.02 + 0.015;
+    } else {
+      const angle = Math.random() * Math.PI * 2;
+      const speed = Math.random() * 5 + 2;
+      this.vx = Math.cos(angle) * speed;
+      this.vy = Math.sin(angle) * speed;
+      this.life = 1;
+      this.decay = Math.random() * 0.015 + 0.01;
+    }
+    
+    this.color = color;
+    this.size = type === 'bomb' ? Math.random() * 4 + 3 : Math.random() * 3 + 2;
+  }
+  
+  update() {
+    this.x += this.vx;
+    this.y += this.vy;
+    this.vy += this.type === 'fountain' ? 0.2 : 0.1;
+    this.life -= this.decay;
+  }
+  
+  draw(ctx) {
+    ctx.save();
+    ctx.globalAlpha = this.life;
+    ctx.fillStyle = this.color;
+    ctx.shadowBlur = 15;
+    ctx.shadowColor = this.color;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+}
+
+class Rocket {
+  constructor(startX, startY, targetX, targetY) {
+    this.x = startX;
+    this.y = startY;
+    this.targetX = targetX;
+    this.targetY = targetY;
+    this.vx = (targetX - startX) / 60;
+    this.vy = (targetY - startY) / 60;
+    this.trail = [];
+    this.exploded = false;
+    this.color = ['#ff6b35', '#ffd166', '#7b2cbf', '#06ffa5', '#ff006e', '#ffeaa7'][Math.floor(Math.random() * 6)];
+  }
+  
+  update() {
+    if (!this.exploded) {
+      this.x += this.vx;
+      this.y += this.vy;
+      
+      this.trail.push({ x: this.x, y: this.y, life: 1 });
+      if (this.trail.length > 15) this.trail.shift();
+      
+      const dist = Math.sqrt(Math.pow(this.targetX - this.x, 2) + Math.pow(this.targetY - this.y, 2));
+      if (dist < 10) {
+        this.explode();
+      }
+    }
+    
+    this.trail.forEach(t => t.life -= 0.05);
+    this.trail = this.trail.filter(t => t.life > 0);
+  }
+  
+  draw(ctx) {
+    if (!this.exploded) {
+      ctx.save();
+      ctx.shadowBlur = 10;
+      ctx.shadowColor = this.color;
+      
+      this.trail.forEach((t, i) => {
+        ctx.globalAlpha = t.life;
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(t.x, t.y, 3, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      
+      ctx.fillStyle = '#ffffff';
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, 4, 0, Math.PI * 2);
+      ctx.fill();
+      
+      ctx.restore();
+    }
+  }
+  
+  explode() {
+    this.exploded = true;
+    for (let i = 0; i < 80; i++) {
+      fireworks.particles.push(new FireworkParticle(this.x, this.y, this.color, 'normal'));
+    }
+  }
+}
+
+class Sparkler {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+    this.life = 60;
+    this.color = ['#ffd166', '#ffeaa7', '#ffffff'][Math.floor(Math.random() * 3)];
+  }
+  
+  update() {
+    this.life--;
+    if (Math.random() < 0.3) {
+      const angle = Math.random() * Math.PI * 2;
+      const speed = Math.random() * 2 + 1;
+      fireworks.particles.push({
+        x: this.x,
+        y: this.y,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed - 1,
+        life: 0.5,
+        decay: 0.02,
+        color: this.color,
+        size: 2,
+        update() {
+          this.x += this.vx;
+          this.y += this.vy;
+          this.vy += 0.05;
+          this.life -= this.decay;
+        },
+        draw(ctx) {
+          ctx.save();
+          ctx.globalAlpha = this.life;
+          ctx.fillStyle = this.color;
+          ctx.shadowBlur = 10;
+          ctx.shadowColor = this.color;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.restore();
+        }
+      });
+    }
+  }
+  
+  draw(ctx) {
+    ctx.save();
+    ctx.fillStyle = this.color;
+    ctx.shadowBlur = 15;
+    ctx.shadowColor = this.color;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, 3, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+}
+
+function setupFireworksInteraction() {
+  const canvas = fireworks.canvas;
+  
+  canvas.addEventListener('mousedown', (e) => {
+    if (currentPage !== 6) return;
+    fireworks.isDragging = true;
+    fireworks.dragStart = { x: e.clientX, y: e.clientY };
+  });
+  
+  canvas.addEventListener('mousemove', (e) => {
+    if (currentPage !== 6 || !fireworks.isDragging) return;
+    const dx = e.clientX - fireworks.dragStart.x;
+    const dy = e.clientY - fireworks.dragStart.y;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+    
+    if (dist > 20) {
+      fireworks.rockets.push(new Rocket(fireworks.dragStart.x, fireworks.dragStart.y, e.clientX, e.clientY));
+      fireworks.isDragging = false;
+      fireworks.dragStart = null;
+    }
+  });
+  
+  canvas.addEventListener('mouseup', (e) => {
+    if (currentPage !== 6) return;
+    if (fireworks.isDragging && fireworks.dragStart) {
+      createBomb(e.clientX, e.clientY);
+    }
+    fireworks.isDragging = false;
+    fireworks.dragStart = null;
+  });
+  
+  canvas.addEventListener('touchstart', (e) => {
+    if (currentPage !== 6) return;
+    e.preventDefault();
+    const touch = e.touches[0];
+    fireworks.isDragging = true;
+    fireworks.dragStart = { x: touch.clientX, y: touch.clientY };
+  }, { passive: false });
+  
+  canvas.addEventListener('touchmove', (e) => {
+    if (currentPage !== 6 || !fireworks.isDragging) return;
+    e.preventDefault();
+    const touch = e.touches[0];
+    const dx = touch.clientX - fireworks.dragStart.x;
+    const dy = touch.clientY - fireworks.dragStart.y;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+    
+    if (dist > 30) {
+      fireworks.rockets.push(new Rocket(fireworks.dragStart.x, fireworks.dragStart.y, touch.clientX, touch.clientY));
+      fireworks.isDragging = false;
+      fireworks.dragStart = null;
+    }
+  }, { passive: false });
+  
+  canvas.addEventListener('touchend', (e) => {
+    if (currentPage !== 6) return;
+    e.preventDefault();
+    if (fireworks.isDragging && fireworks.dragStart) {
+      createBomb(fireworks.dragStart.x, fireworks.dragStart.y);
+    }
+    fireworks.isDragging = false;
+    fireworks.dragStart = null;
+  }, { passive: false });
+  
+  canvas.addEventListener('dblclick', (e) => {
+    if (currentPage !== 6) return;
+    createFountain(e.clientX, e.clientY);
+  });
+}
+
+function createBomb(x, y) {
+  const colors = ['#ff6b35', '#ffd166', '#7b2cbf', '#06ffa5', '#ff006e', '#ffeaa7'];
+  const color = colors[Math.floor(Math.random() * colors.length)];
+  
+  for (let i = 0; i < 120; i++) {
+    fireworks.particles.push(new FireworkParticle(x, y, color, 'bomb'));
+  }
+  
+  for (let i = 0; i < 5; i++) {
+    setTimeout(() => {
+      for (let j = 0; j < 20; j++) {
+        const angle = Math.random() * Math.PI * 2;
+        const dist = Math.random() * 50;
+        fireworks.sparklers.push(new Sparkler(x + Math.cos(angle) * dist, y + Math.sin(angle) * dist));
+      }
+    }, i * 100);
+  }
+}
+
+function createFountain(x, y) {
+  const colors = ['#ffd166', '#ffeaa7', '#ff6b35'];
+  
+  for (let i = 0; i < 30; i++) {
+    setTimeout(() => {
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      for (let j = 0; j < 10; j++) {
+        fireworks.particles.push(new FireworkParticle(x, y, color, 'fountain'));
+      }
+    }, i * 50);
+  }
+}
+
+function createFirework() {
+  const x = Math.random() * fireworks.canvas.width;
+  const y = Math.random() * fireworks.canvas.height * 0.5 + fireworks.canvas.height * 0.1;
+  const colors = ['#ff6b35', '#ffd166', '#7b2cbf', '#06ffa5', '#ff006e', '#ffeaa7'];
+  const color = colors[Math.floor(Math.random() * colors.length)];
+  
+  for (let i = 0; i < 50; i++) {
+    fireworks.particles.push(new FireworkParticle(x, y, color));
+  }
+}
+
+function animateFireworks() {
+  if (currentPage !== 6) return;
+  
+  fireworks.ctx.fillStyle = 'rgba(10, 1, 24, 0.15)';
+  fireworks.ctx.fillRect(0, 0, fireworks.canvas.width, fireworks.canvas.height);
+  
+  fireworks.rockets = fireworks.rockets.filter(r => r.trail.length > 0 || !r.exploded);
+  fireworks.rockets.forEach(r => {
+    r.update();
+    r.draw(fireworks.ctx);
+  });
+  
+  fireworks.particles = fireworks.particles.filter(p => p.life > 0);
+  fireworks.particles.forEach(p => {
+    p.update();
+    p.draw(fireworks.ctx);
+  });
+  
+  fireworks.sparklers = fireworks.sparklers.filter(s => s.life > 0);
+  fireworks.sparklers.forEach(s => {
+    s.update();
+    s.draw(fireworks.ctx);
+  });
+  
+  if (Math.random() < 0.02) {
+    createFirework();
+  }
+  
+  requestAnimationFrame(animateFireworks);
+}
+</script>
